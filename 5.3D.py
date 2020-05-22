@@ -18,7 +18,7 @@ def blink_dotdash(dotdash):
    # turn off
    GPIO.output(14, GPIO.LOW)
    
-def blinkChar(strChar, dot, dash, compSpace):   
+def blinkChar(strChar, dot, dash, compSpace, charSpace):   
     if (strChar.lower() == 'a'):
         blink_dotdash(dot)
         time.sleep(compSpace)       
@@ -205,7 +205,7 @@ def blink():
         tkmb.showerror(title=None, message='non alpha characters entered')        
     else:
         for i in range(len(x)):
-            blinkChar(x[i], dot, dash, compSpace)
+            blinkChar(x[i], dot, dash, compSpace, charSpace)
             if x[i] == ' ':
                 time.sleep(wordSpace - charSpace)
             elif i < len(x):
